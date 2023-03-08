@@ -11,7 +11,7 @@ def calculmoyenne(val1,val2):
 if __name__ == '__main__':
     main()
     x=5
-    y=8
+    y=67
     moyenne=calculmoyenne(x,y)
     print(moyenne)
 
