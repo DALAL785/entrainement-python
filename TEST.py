@@ -6,7 +6,9 @@ valeur_bit = 19500
 valeur_eur =(somme_depose/valeur_bit)
 print("solde de depart " + str(valeur_eur)+ " bitcoin")
 
-valeur_bit_actuelle = int(input("Notez la valeur actuelle du Bitcoin"))
+valeur_bit_actuelle = float(input("Notez la valeur actuelle du Bitcoin"))
+
+print(valeur_bit_actuelle)
 
 calcul_pourcentage = ((valeur_bit_actuelle/valeur_bit) - 1) * 100
 
