@@ -1,14 +1,14 @@
 # On indique la somme deposé en euro 
-somme_depose_bit = 100
-somme_depose_xpr = 100
-somme_depose_eth = 100
-somme_depose_doge = 100
+somme_depose_bit = 71.7
+somme_depose_xpr = 80.1
+somme_depose_eth = 58.5156
+somme_depose_doge = 150
 
 #valeur des crypto au moment des achat 
-valeur_bit = 19500
-valeur_xpr = 0.35
-valeur_eth = 1332
-valeur_doge = 0.061
+valeur_bit = 19690.6
+valeur_xpr = 0.2777
+valeur_eth = 915.24
+valeur_doge = 0.076
 
 #nb de crypto acheté
 valeur_eur_bit = round(somme_depose_bit/valeur_bit, 2)
@@ -44,17 +44,15 @@ benef=[benef_bit, benef_xpr, benef_eth, benef_doge]
 
 benef_total = round((benef_doge+benef_eth+benef_xpr+benef_bit), 2)
 
-y=0
 
-for x in benef:
+for x in range(0, len(benef)-1):
     
     if x > 0 :
-        print("La valeur du "+ benefname[y] + " à évolué de " + str(x) + " %")
+        print("La valeur du "+ benefname[x] + " à évolué de " + str(benef[x]) + " %")
     elif x == 0:
-        print("La valeur du "+benefname[y] + " est resté la meme")
+        print("La valeur du "+benefname[x] + " est resté la meme")
     else:
-        print("La valeur du "+benefname[y] +"à baissé de " + str(x) + " %")
-    y += 1
+        print("La valeur du "+benefname[x] +" à baissé de " + str(benef[x]) + " %")
 
 
 
