@@ -33,42 +33,29 @@ calcul_pourcentage_eth = round(((valeur_eth_actuelle/valeur_eth) - 1) * 100, 2)
 calcul_pourcentage_doge = round(((valeur_doge_actuelle/valeur_doge) - 1) * 100, 2)
 
 
+
 benef_bit = (valeur_eur_bit*valeur_bit_actuelle) - somme_depose_bit
 benef_xpr = (valeur_eur_xpr*valeur_xpr_actuelle) - somme_depose_xpr
 benef_eth = (valeur_eur_eth*valeur_eth_actuelle) - somme_depose_eth
 benef_doge = (valeur_eur_doge*valeur_doge_actuelle) - somme_depose_doge
 
+benefname=["BTC", "XRP" , "ETH", "DOGE"]
+benef=[benef_bit, benef_xpr, benef_eth, benef_doge]
 
 benef_total = round((benef_doge+benef_eth+benef_xpr+benef_bit), 2)
 
-if calcul_pourcentage_bit > 0 :
-    print("La valeur du BTC à évolué de " + str(calcul_pourcentage_bit) + " %")
-elif calcul_pourcentage_bit == 0:
-    print("La valeur du BTC est resté la meme")
-else:
-    print("La valeur du BTC à baissé de " + str(calcul_pourcentage_bit) + " %")
+y=0
 
-if calcul_pourcentage_xpr > 0 :
-    print("La valeur du XPR à évolué de " + str(calcul_pourcentage_xpr) + " %")
-elif calcul_pourcentage_xpr == 0:
-    print("La valeur du XPR est resté la meme")
-else:
-    print("La valeur du XPR à baissé de " + str(calcul_pourcentage_xpr) + " %")
+for x in benef:
+    
+    if x > 0 :
+        print("La valeur du "+ benefname[y] + " à évolué de " + str(x) + " %")
+    elif x == 0:
+        print("La valeur du "+benefname[y] + " est resté la meme")
+    else:
+        print("La valeur du "+benefname[y] +"à baissé de " + str(x) + " %")
+    y += 1
 
-
-if calcul_pourcentage_eth > 0 :
-    print("La valeur du ETH à évolué de " + str(calcul_pourcentage_eth) + " %")
-elif calcul_pourcentage_eth == 0:
-    print("La valeur du ETH est resté la meme")
-else:
-    print("La valeur du ETH à baissé de " + str(calcul_pourcentage_eth) + " %")
-
-if calcul_pourcentage_doge> 0 :
-    print("La valeur du DOGECOIN à évolué de " + str(calcul_pourcentage_doge) + " %")
-elif calcul_pourcentage_doge == 0:
-    print("La valeur du DOGECOIN est resté la meme")
-else:
-    print("La valeur du DOGECOIN à baissé de " + str(calcul_pourcentage_doge) + " %")
 
 
 if benef_total > 0 :
